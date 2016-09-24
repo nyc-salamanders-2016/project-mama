@@ -48,7 +48,7 @@ class SelectQuestForm extends React.Component {
             </label>
           )}
         <input value="submit" type="submit"/>
-        </form> : <VoteQuest/>}
+        </form> : <QuestVote/>}
       </section>
       </div>
 
