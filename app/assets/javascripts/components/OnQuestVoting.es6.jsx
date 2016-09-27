@@ -9,6 +9,7 @@ class OnQuestVoting extends React.Component(){
   handleQuestVoteSubmit(event){
     event.preventDefault;
     const questID = this.props.currentQuest.id
+    const userID = this.props.currentUser.id
     $.ajax({
       url: `/quests/${questID}/quest_members/${id}`,
       method: 'PUT',
@@ -26,7 +27,7 @@ class OnQuestVoting extends React.Component(){
       method: 'put',
       data: { response: 'questVoteDone' }
     })
-
+ 
   }
 
   render(){
@@ -42,11 +43,11 @@ class OnQuestVoting extends React.Component(){
         </div>
         )
       } else {
-         succedQuest = <h3>Please wait while the quest members decide whether the quest succeeds or fails!</h3>
+         succedQuest = <SucceededQuest currentGame={this.props.currentGame} currentUser={this.props.currentUser} users={this.props.users} members={this.state.members}/>
       }
     return(
       <div>
-        <h3>On quest voting: did the quest succeed or fail?!?</h3>
+        <h3>The Quest is happening!</h3>
         {succedQuest}
       </div>
     )

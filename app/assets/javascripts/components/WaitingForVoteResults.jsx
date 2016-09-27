@@ -2,6 +2,7 @@ class WaitingForVoteResults extends React.Component {
   constructor () {
     super ()
     this.state = {
+      members: [],
       votes: [],
       done: false
     }
@@ -30,7 +31,7 @@ class WaitingForVoteResults extends React.Component {
       }, 1000);
   }
   render () {
-    let toShow
+    let toShow 
     if (this.state.done === true) {
       toShow =
       <div>
@@ -40,6 +41,7 @@ class WaitingForVoteResults extends React.Component {
     } else {
       toShow =
       <p> waiting for quest results </p>
+
     }
     return (
       <div>
